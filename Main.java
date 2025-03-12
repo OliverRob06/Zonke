@@ -1,6 +1,7 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Main {
-
 
 	public void displayMenu() 
 	{
@@ -27,9 +28,8 @@ public class Main {
 
                     if (choice >= 1 && choice <= 6)
                     {
-                        break:
+                        break;                   
                     }
-
                     else
                     {
                         System.out.println("Please enter a valid number");
@@ -38,10 +38,10 @@ public class Main {
                 }
 
 
-                catch(InputMismatchExecption e)
+                catch(InputMismatchException e)
                 {
                     s.nextInt();
-                    System.out.println("Please enter a number")
+                    System.out.println("Please enter a number");
                 }
 
                 
@@ -73,7 +73,13 @@ public class Main {
             }
         } 
         while (choice != 6);
+
+        s.close();
     }
+
+
+
+
 /**
  * The main method
  * 
@@ -81,7 +87,7 @@ public class Main {
  */
 public static void main(String[] args) 
 {
-    Menu M = new Menu();
+    Main M = new Main();
     M.displayMenu();
 }
 

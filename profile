@@ -1,7 +1,9 @@
 public class Item 
 {
 	String name;
+    String workPlace;
 	int id;
+    FriendsList friends;
 	Item left;
 	Item right;
 
@@ -10,6 +12,7 @@ public class Item
     {
 		name = "";
 		id = 0;
+        friends = null;
 		left = null;
 		right = null;
 	}
