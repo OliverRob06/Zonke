@@ -1,0 +1,53 @@
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+
+
+public class FileHandling {
+    
+    public FileReadExample() {
+        
+    }
+    
+    
+    public void readLinesFromAFile() {
+        FileReader fileReader = null;
+        BufferedReader bufferedReader = null;
+    
+        String nextLine;
+        
+        
+        try {
+            fileReader = new FileReader("profiles.txt");
+        
+            bufferedReader = new BufferedReader(fileReader); 
+            
+            
+            nextLine = bufferedReader.readLine();
+            
+            while (nextLine != null) {
+                System.out.println(nextLine);
+                
+                nextLine = bufferedReader.readLine();
+            } 
+        }
+        catch (FileNotFoundException e) {   
+            System.out.println("Sorry, your file was not found.");
+        }
+        catch (IOException e) {
+            System.out.println("Sorry, there has been a problem opening or reading from the file");
+        }
+        finally {
+            if (bufferedReader != null) {
+                
+                try {
+                     bufferedReader.close();
+                }
+                catch (IOException e) {
+                    System.out.println("Sorry, there has been a problem closing the file");
+                }
+            }
+        }
+    }
+}
