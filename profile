@@ -1,28 +1,23 @@
 public class Item 
 {
-	double cost;
-	String Name;
+	String name;
 	int id;
-	int quantity;
 	Item left;
 	Item right;
+
 	
 	Item() 
     {
-		Name = "";
-		cost = 0;
+		name = "";
 		id = 0;
-		quantity = 1;
 		left = null;
 		right = null;
 	}
 	
-	public Item(double cost, String Name, int id, int quantity, Item left, Item right) 
+	public Item(String name, int id, Item left, Item right) 
 	{
-		this.cost = cost;
-		this.Name = Name;
+		this.name = name;
 		this.id = id;
-		this.quantity = quantity;
 		this.left = left;
 		this.right = right;
 	}
@@ -56,33 +51,15 @@ public class Item
 	{
 		this.right = right;
 	}
-	public double getCost() 
-	{
-		return cost;
-	}
-
-	public void setCost(double cost) 
-	{
-		this.cost = cost;
-	}
 
 	public String getName() 
 	{
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) 
 	{
 		Name = name;
-	}
-	public int getQuantity() 
-	{
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) 
-	{
-		this.quantity = quantity;
 	}
 	
 }
